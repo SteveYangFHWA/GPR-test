@@ -50,3 +50,19 @@ Table 1. Relative Dielectric Permittivity for Different Materials. <a href="http
 ### Step 2. Time-zero correction
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time-zero correction aligns multiple A-scans vertically. When the reflected signal is recorded in the receiver, several factors (thermal drift, electronic instability, cable length differences, or variations in antenna airgap) can cause inconsistent wavelet arrival time. <a href="https://books.google.com/books?hl=en&lr=&id=y__uIi-5RvgC&oi=fnd&pg=PP1&dq=Harry+M.+Jol+-+Ground+Penetrating+Radar+Theory+and+Applications-Elsevier+Science+(2009)&ots=kLraP5-XJq&sig=kNpAJ-oChLEdFUjOKMHZO6Dkxgo#v=onepage&q=Harry%20M.%20Jol%20-%20Ground%20Penetrating%20Radar%20Theory%20and%20Applications-Elsevier%20Science%20(2009)&f=false">[5]</a> Time-zero correction provides a more accurate depth calculation because it sets the top of the scan to a close approximation of the ground surface. <a href="https://www.geophysical.com/wp-content/uploads/2017/10/GSSI-RADAN-7-Manual.pdf">[6]</a> We assume the first positive peak of each A-scan represents the 0 m depth of the ground surface, which is called as “first positive peak” method. <a href="https://erdc-library.erdc.dren.mil/jspui/handle/11681/45621">[7]</a> <a href="https://ieeexplore.ieee.org/abstract/document/1343425">[8]</a>
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/a1c507d7-7d12-44db-af33-67b73e1acb5b" alt="image">
+</p>
+
+Figure 3. Comparison of (a) scan-by-scan time-zero correction and (b) without time-zero correction on our GPR data.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are multiple methods of time-zero correction, one method is calculating the mean or median value of the first peak’s arrival time for the entire A-scans and align them based on the mean or median value.<a href="https://erdc-library.erdc.dren.mil/jspui/handle/11681/45621">[7]</a> However, this method is not robust since the time-zero position is not perfectly aligning with all the 1st positive peaks of the A-scans (see Figure 4). This method does not correspond with our assumption that the first positive peak of each A-scan represents the 0 m depth of the ground surface.
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/55aa498f-96ec-4988-9015-60c859061797" alt="image">
+</p>
+
+Figure 4. Plots of multiple A-scans with mean value method. The red vertical line shows the time-zero index based on the mean value. Some of the 1st positive peaks of A-scans align with the time-zero, but some A-scans do not.   
