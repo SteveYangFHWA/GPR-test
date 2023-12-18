@@ -58,5 +58,4 @@ save_to_csv(df1, user_directory, 'data')
 save_to_csv(df2, user_directory, 'config')
 ```
 
-## Chapter 2. Data Processing for the Experimental Lab Specimen
 
