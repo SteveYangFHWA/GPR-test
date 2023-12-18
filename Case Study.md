@@ -23,3 +23,26 @@ Figure 1. The definition of A-, B-, and C-scan. <a href="https://doi.org/10.1515
 Figure 2. GPR data acquisition on the bridge (Left) and how GPR B-scan data looks like with respect to the actual rebar configuration (Right). The horizontal axis (x-axis) of the data corresponds to the distance along the survey line (moving direction of the GPR machine), and the vertical axis (z-axis) is the depth of the ground.  <a href="https://infotechnology.fhwa.dot.gov/bridge/">[2]</a>
 
 
+### Step 1. Environment setup via Anaconda
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anaconda is commonly used for managing Python packages in user-defined environments. In other words, it allows you to create isolated environments for different projects, each with its own set of dependencies, without interfering with the system-wide Python installation. This is particularly useful in data science and scientific computing where projects may have different requirements and dependencies. Here in First, download Anaconda in the provided URL.
+
+URL to download conda: [https://www.anaconda.com/download](https://www.anaconda.com/download)
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We recommend to install our conda environment (`charisma-env`) to run the code properly. This environment has all the dependencies from our entire code. Download the `charisma-env.yml` file from our CHARISMA Github first, open your Anaconda Prompt, and go to the “Downloads” directory. 
+
+
+To create charisma-env with conda, run the following command in your root environment:
+
+`conda env create -f charisma-env.yml`
+
+To activate the charisma-env in conda:
+
+`conda activate charisma-env`
+
+To verify that the new environment was installed correctly:
+
+`conda env list`
+
+After creating the charisma-env environment, install Jupyter Notebook or Spyder from Anaconda Navigator to use our CHARISMA Python package.
