@@ -84,4 +84,16 @@ Figure 5. Plots of multiple A-scans with scan-by-scan method. The red vertical l
 Figure 6. Plots of multiple A-scans with scan-by-scan method, but after cutting out the data that is not in the common range. The red vertical line shows the time-zero index, and the 1st positive peak is aligned to the red line. The misalignment at the starting and the ending points of the A-scan profiles is removed.
 
 
+### Step 3. Migration
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Migration process converts the hyperbolic signal into spatial locations of the subsurface object. The hyperbolas in the GPR B-scan data stem from the nature of its method. GPR uses electromagnetic wave pulse to detect buried objects, and the antenna is traversing over the survey line. When the antenna is directly above the object, the distance is at its minimum. As the antenna moves, the distance is getting longer. This changing distance results in a distance-time plot that resembles a hyperbola (Figure 7). 
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/8b35dccc-3b62-4752-b542-fcf9d42b1704" alt="image">
+</p>
+
+Figure 7. Schematic of GPR data acquisition process and hyperbola profile formation on the distance-time plot. Note that the distance is minimal when the object and antenna are vertically aligned. <a href="https://www.scirp.org/journal/paperinformation?paperid=76624">[9]</a>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The hyperbola profiles in B-scan can lead to distortions in the radar image. Migration algorithms help correct these distortions, effectively relocating the reflected signals to their correct positions in the subsurface, resulting in a more accurate representation of the buried features. Here we specifically introduce Frequency-Wavenumber (F-K or Stolt) migration. This method has proven to be working well for the constant-velocity propagation media, [ref,ref] which is also fitting well with our objective (bridge rebar configuration).  
