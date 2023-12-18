@@ -44,6 +44,42 @@ Here, $\exp(\alpha \cdot t)$ represents the exponential function with $\alpha$ a
   <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/8c27afb6-b0ef-4c3e-b3db-6629f5295e1a" alt="image">
 </p>
 
-Figure 13. A-scan of the GPR data (a) before gain and (b) after gain. The first peak in (a) is much larger than the other signals, making the B-scan image blur. Note that the base line of the signal in (b) is going upward, due to the amplification.
+Figure 13. A-scan of the GPR data (a) before gain and (b) after gain. The first peak in (a) is much larger than the other signals, making the B-scan image blur. Note that the baseline of the signal in (b) is going upward, due to the amplification.
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/4a13ee06-8366-4018-b498-4a3c7600c2a2" alt="image">
+</p>
+
+Figure 14. B-scan of the GPR data (a) & (c) before gain and (b) & (d) after gain.
+
+### Step 3. Dewow
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dewow is used to mitigate the effects of low-frequency variations, or "wows," in the GPR signal. The terminology is derived from the nature of the low-frequency variations or oscillations that it aims to mitigate—resembling a slow, undulating motion, akin to the exclamation "wow." Wows can result from various factors, such as uneven ground surfaces or fluctuations in the system. Dewow processing involves filtering or removing these low-frequency components from the GPR signal to enhance the clarity and resolution of subsurface features. This technique helps improve the overall quality of GPR data by reducing unwanted variations. Here we used trinomial dewow <a href="https://github.com/iannesbitt/readgssi/blob/master/readgssi/functions.py">[13]</a> to correct the baseline of each A-scan.
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/4fc9b776-a26b-459c-9511-c1181551534f" alt="image">
+</p>
+
+Figure 15. A-scan of the GPR data (a) before dewow and (b) after dewow. The baseline of the A-scan is corrected.
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/cbb12b38-4445-4bde-a788-b98d21c0a713" alt="image">
+</p>
+
+Figure 14. B-scan of the GPR data (a) & (c) before dewow and (b) & (d) after dewow.
+
+### Step 4. Time Zero Correction
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the processed data (outlier removal, gain, and dewow), we are applying the scan-by-scan time-zero correction. 
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/0b55284a-65b7-42a9-a1ca-ca973002a3d5" alt="image">
+</p>
+
+Figure 15. The results of the scan-by-scan time-zero correction.
 
 
