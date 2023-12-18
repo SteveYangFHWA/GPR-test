@@ -107,3 +107,16 @@ $$
 
 where $\phi\$ is the wave function (apparently GPR signals are electromagnetic waves), $x$ is the axis along the GPR survey line, $z$ is the axis along the depth, and $t$ is the time. If you are not familiar with the wave propagation equation in a media, you are redirected to the following YouTube video, which derives the wave equation from scratch with the guitar (acoustic wave): [https://www.youtube.com/watch?v=UXqUXYaRyGU&t=1684s&ab_channel=SteveBrunton](https://www.youtube.com/watch?v=UXqUXYaRyGU&t=1684s&ab_channel=SteveBrunton)
 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The next step is applying the Fourier transform to the wave function $\phi(x, z, t)\$,
+
+$$
+\phi(x, z, t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} E(k_x, \omega) e^{-j(k_x x + k_z z - \omega t)} \ dk_x \ d\omega,
+$$
+
+where $E(k_x, \omega)$ is the Fourier domain for every possible combination of wave number $k_x$ and frequency $\omega$. The physical meaning of the equation is that the wave function can be expressed as a summation of various plane waves with different wavenumbers and frequencies. It is noteworthy that the $E(k_x, \omega)$ is time-independent, which will be used to reconstruct the waveform at the specific location of the object underground (The meaning of “migration” comes from this aspect).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After the Fourier transform, we correlate our actual GPR data into the equation. Note that we receive GPR signal at $z = 0$, where the antenna locations are at the surface. Then the wave function becomes,
+
+
+
