@@ -46,3 +46,17 @@ To verify that the new environment was installed correctly:
 `conda env list`
 
 After creating the charisma-env environment, install Jupyter Notebook or Spyder from Anaconda Navigator to use our CHARISMA Python package.
+
+
+### Step 2. Convert DZT into CSV files
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPR data is saved in DZT format (which is not accessible without specific software), so here we provide a data format conversion code to CSV format, which is more friendly to readers. The readdzt function in our Python code (`gprPreprocessing.py`) is in charge of opening, reading, and configuring the DZT data into the Pandas data frame, and the save_to_csv function exports the data frame into CSV format. Here the readers need to define the directory path of the downloaded DZT file and “user_directory” individually to save the CSV files in your storage system. Here we are saving two CSV files for data frame1 `df1` and data frame2 `df2` from one DZT file. The `df1` is for collected GPR data and `df2` is for the configuration settings of GPR.
+```
+data, hdr, df1, df2 = readdzt(/Your directory/FILE____488.DZT')
+user_directory = "H:/GPR_work"
+save_to_csv(df1, user_directory, 'data')
+save_to_csv(df2, user_directory, 'config')
+```
+
+## Chapter 2. Data Processing for the Experimental Lab Specimen
+
