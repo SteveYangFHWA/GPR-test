@@ -22,3 +22,9 @@ Figure 12. Outlier control with IQR method. The df_1 is the raw data and the IQR
 
 ### Step 2. Gain
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We observed that the GPR signal isn't sufficiently clear for processing (see Figure 14 (a) and (c)), likely because the first peak amplitude significantly outweighs other signals. This disparity could be attributed to the GPR settings or signal attenuation. To address this issue, we employ a gain function to better highlight the reflected signal. We introduce two methods, namely power gain and exponential gain, <a href="https://emanuelhuber.github.io/RGPR/02_RGPR_tutorial_basic-GPR-data-processing/">[12]</a> to enhance the clarity of the reflected signal. The power gain function is defined as follows,
+
+$$
+x_g(t) = x(t) \cdot t^ \alpha.
+$$
+
+The signal $x(t)$ is multiplied by $t^ \alpha$, where $\alpha$ is the exponent. In the default case, $\alpha$ is set to 1. The effect of the power gain is to amplify the signal based on a power-law relationship with time $t$. This can be useful for emphasizing specific features of the signal.
