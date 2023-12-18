@@ -96,4 +96,14 @@ Figure 6. Plots of multiple A-scans with scan-by-scan method, but after cutting 
 Figure 7. Schematic of GPR data acquisition process and hyperbola profile formation on the distance-time plot. Note that the distance is minimal when the object and antenna are vertically aligned. <a href="https://www.scirp.org/journal/paperinformation?paperid=76624">[9]</a>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The hyperbola profiles in B-scan can lead to distortions in the radar image. Migration algorithms help correct these distortions, effectively relocating the reflected signals to their correct positions in the subsurface, resulting in a more accurate representation of the buried features. Here we specifically introduce Frequency-Wavenumber (F-K or Stolt) migration. This method has proven to be working well for the constant-velocity propagation media, [ref,ref] which is also fitting well with our objective (bridge rebar configuration).  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The hyperbola profiles in B-scan can lead to distortions in the radar image. Migration algorithms help correct these distortions, effectively relocating the reflected signals to their correct positions in the subsurface, resulting in a more accurate representation of the buried features. Here we specifically introduce Frequency-Wavenumber (F-K or Stolt) migration. This method has proven to be working well for the constant-velocity propagation media, <a href="https://ieeexplore.ieee.org/abstract/document/1221785">[10]</a> <a href="https://www.hindawi.com/journals/mpe/2014/280738/">[11]</a> which also fits well with our objective (bridge rebar configuration). 
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The F-K migration transforms the GPR B-scan into an artificially created wave map. In other words, this method specifically locates the object by reconstructing the waveforms at object locations. This is done by the Fourier Transform, converting the waves from the time-space domain to the frequency-wavenumber domain. To understand how this process works, we need the wave propagation equation in a media,
+
+$$
+\left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial z^2} - \frac{1}{v^2} \frac{\partial^2}{\partial t^2} \right) \phi(x, z, t) = 0,
+$$
+
+where $\phi\$ is the wave function (apparently GPR signals are electromagnetic waves), $x$ is the axis along the GPR survey line, $z$ is the axis along the depth, and $t$ is the time. If you are not familiar with the wave propagation equation in a media, you are redirected to the following YouTube video, which derives the wave equation from scratch with the guitar (acoustic wave): [https://www.youtube.com/watch?v=UXqUXYaRyGU&t=1684s&ab_channel=SteveBrunton](https://www.youtube.com/watch?v=UXqUXYaRyGU&t=1684s&ab_channel=SteveBrunton)
+
