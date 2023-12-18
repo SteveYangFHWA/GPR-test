@@ -26,3 +26,23 @@ for index, row in df_2.iterrows():
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `rhf_sps` and `rhf_spm` refer to “scans-per-second” and “scans-per-meter”. Here scans mean the column dimension of the GPR data (332 in our data). Both of parameters indicate how many scans are obtained per unit time or distance. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `rhf_position` and `rhf_range` are parameters for indicating position and range of the GPR scans in nano seconds (ns). For example, if `rhf_position = 0`, this means that the starting point for measuring positions in your GPR data is at the initial time when the radar pulse is sent. In other words, the measurement of positions starts from the moment the radar pulse is emitted. Similarly, if `rhf_range = 8`, it indicates the time it takes for the radar signals to travel to the subsurface and return takes 8 ns. By knowing the speed of electromagnetic waves and average dielectric constant, this time can be converted to a distance measurement.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `rhf_espr` is average dielectric constant. It accounts for the varying properties of the subsurface materials. Different materials have different dielectric constants, and accurate knowledge of this parameter is crucial for correctly interpreting the travel time of radar signals and converting it into depth. Table 1 shows the relative dielectric constant for various materials. The `rhf_depth` is depth in meters, indicating how deep into the subsurface the radar signals penetrate underground.
+
+Table 1. Relative Dielectric Permittivity for Different Materials. <a href="https://infotechnology.fhwa.dot.gov/bridge/">[4]</a>
+
+| Material           | Dielectric Constant |
+|--------------------|---------------------|
+| Air                | 1                   |
+| Clay               | 25-40               |
+| Concrete           | 8-10                |
+| Crushed base       | 6-8                 |
+| Gravel             | 4-7                 |
+| Hot mix asphalt    | 4-8                 |
+| Ice                | 4                   |
+| Insulation board   | 2-2.5               |
+| Sand               | 4-6                 |
+| Silt               | 16-30               |
+| Silty sand         | 7-10                |
+| Water (fresh)      | 81                  |
+
