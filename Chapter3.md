@@ -21,3 +21,4 @@ Figure 11. Bridge location map of I-10 over Cedar Lake Road in Mississippi.
 Figure 12. Outlier control with IQR method. The df_1 is the raw data and the IQR_df_1 is the processed data. The red box shows how the outlier value changed.
 
 ### Step 2. Gain
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We observed that the GPR signal isn't sufficiently clear for processing (see Figure 14 (a) and (c)), likely because the first peak amplitude significantly outweighs other signals. This disparity could be attributed to the GPR settings or signal attenuation. To address this issue, we employ a gain function to better highlight the reflected signal. We introduce two methods, namely power gain and exponential gain, <a href="https://emanuelhuber.github.io/RGPR/02_RGPR_tutorial_basic-GPR-data-processing/">[12]</a> to enhance the clarity of the reflected signal. The power gain function is defined as follows,
