@@ -143,4 +143,34 @@ $$
   <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/1809f71f-222b-4a95-b5a7-f86900ad3877" alt="image">
 </p>
 
-Figure 8. F-K migration results from (a) mean time zero correction and (b) scan-by-scan time zero correction. 
+Figure 8. F-K migration results from (a) mean-time zero correction and (b) scan-by-scan time zero correction. 
+
+
+### Step 4. Pinpoint Rebars
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is noteworthy that the size of the white points in Figure 8 is too large compared to the rebar diameter, so we estimate the rebar location with the K-means clustering method. K-means clustering is a popular unsupervised machine learning algorithm used for partitioning a dataset into distinct, non-overlapping clusters. The goal is to group similar data points and separate dissimilar ones. Interesting features in K-means clustering are that 1) we can specify the number of clusters we want to observe, and 2) we can point out the centroid of each cluster. We take advantage of these features to pinpoint the rebar location.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our code normalizes the signal amplitude of the migrated data frame from -1 to 1, gets all the data points where the amplitudes are above 0.7. This allows us to get all the white data points to form a cluster around the white locations. Since we know the number of white points, we apply the K-means clustering algorithm to identify the (x, z) coordinates of each centroid of the cluster. Figure 9 shows the estimated rebar location from the mean, and scan-by-scan time zero correction, respectively. Figure 10 shows the differences in these two cases, with the root mean squared error (RMSE) value of 0.101 inches. Note that the initial rebar locations differ around 0.2 to 0.3 inches.
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/669a777b-e284-4d1c-bc0d-4226c0668ad7" alt="image">
+</p>
+
+Figure 9. Estimated rebar location from (a) mean and (b) scan-by-scan time-zero correction.
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/005e0767-0cbd-472d-b0b0-d817fa0f341c" alt="image">
+</p>
+
+Figure 10. Rebar location difference between mean time-zero and scan-by-scan time-zero correction.
+
+
+### Step 5. Discussion 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the precise rebar configuration identified in our lab specimen through time-zero correction and F-K migration techniques, we have established a solid foundation for our data analysis. The remarkably clean nature of the lab specimen data has allowed us to bypass the need for additional processing steps like gain or dewow adjustments.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As we move forward, a crucial step in validating the robustness of our methodology is to apply it to GPR data acquired from an actual bridge. Real-world scenarios often present unique challenges that may not be fully replicated in a controlled laboratory environment. To ensure the reliability and applicability of our method, the next chapter shows how we process GPR data collected from the bridge structure.
+
+
+
