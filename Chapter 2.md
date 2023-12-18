@@ -46,3 +46,7 @@ Table 1. Relative Dielectric Permittivity for Different Materials. <a href="http
 | Silty sand         | 7-10                |
 | Water (fresh)      | 81                  |
 
+
+### Step 2. Time-zero correction
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time-zero correction aligns multiple A-scans vertically. When the reflected signal is recorded in the receiver, several factors (thermal drift, electronic instability, cable length differences, or variations in antenna airgap) can cause inconsistent wavelet arrival time. <a href="https://books.google.com/books?hl=en&lr=&id=y__uIi-5RvgC&oi=fnd&pg=PP1&dq=Harry+M.+Jol+-+Ground+Penetrating+Radar+Theory+and+Applications-Elsevier+Science+(2009)&ots=kLraP5-XJq&sig=kNpAJ-oChLEdFUjOKMHZO6Dkxgo#v=onepage&q=Harry%20M.%20Jol%20-%20Ground%20Penetrating%20Radar%20Theory%20and%20Applications-Elsevier%20Science%20(2009)&f=false">[5]</a> Time-zero correction provides a more accurate depth calculation because it sets the top of the scan to a close approximation of the ground surface. <a href="https://www.geophysical.com/wp-content/uploads/2017/10/GSSI-RADAN-7-Manual.pdf">[6]</a> We assume the first positive peak of each A-scan represents the 0 m depth of the ground surface, which is called as “first positive peak” method. <a href="https://erdc-library.erdc.dren.mil/jspui/handle/11681/45621">[7]</a> <a href="https://ieeexplore.ieee.org/abstract/document/1343425">[8]</a>
