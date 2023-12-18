@@ -8,3 +8,9 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While the antenna is traveling the bridge horizontally (along the x-axis), the transmitter (Tx) of the antenna emits the electromagnetic wavelet and it penetrates through the ground (z-axis). The reflected signal from the object in the subsurface is recorded into the receiver (Rx) of the antenna. Thus, the recorded data contains multiple reflected wavelets with respect to the distance along x and z (note that z also indicates wave propagation time). Each reflected wavelet as a function of discrete time is called an “A-scan”. “B-scan” is obtained by stitching multiple A-scans together along the survey line (x) and assigning a color (black to white) to the wave amplitude. Since the B-scan provides 2D vertical information underground, it is commonly used to analyze the system or structure. “C-scan” refers to the horizontal view of the specific horizontal layer of the subsurface. Figure 1 helps us understand the definition of each type of scan from GPR.
 
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/945457f6-3e45-46c8-8921-59d08ed28bdd" alt="image">
+</p>
+Figure 1. The definition of A-, B-, and C-scan. <a href="https://doi.org/10.1515/jag-2020-0004">[1]</a>
+
+
