@@ -69,7 +69,7 @@ Figure 15. A-scan of the GPR data (a) before dewow and (b) after dewow. The base
   <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/cbb12b38-4445-4bde-a788-b98d21c0a713" alt="image">
 </p>
 
-Figure 14. B-scan of the GPR data (a) & (c) before dewow and (b) & (d) after dewow.
+Figure 16. B-scan of the GPR data (a) & (c) before dewow and (b) & (d) after dewow.
 
 ### Step 4. Time Zero Correction
 
@@ -80,6 +80,33 @@ Figure 14. B-scan of the GPR data (a) & (c) before dewow and (b) & (d) after dew
   <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/0b55284a-65b7-42a9-a1ca-ca973002a3d5" alt="image">
 </p>
 
-Figure 15. The results of the scan-by-scan time-zero correction.
+Figure 17. The results of the scan-by-scan time-zero correction.
 
+### Step 5. Migration
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We apply F-K migration based on the time-zeroed data.
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/5b2877ff-94da-4f03-939c-6b956e8cda4e" alt="image">
+</p>
+
+Figure 18. The results of the F-K migration.
+
+### Step 6. Pinpoint Rebars
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We use the K-means clustering algorithm used in the previous chapter to pinpoint rebar locations.
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/9612c2fe-5098-4181-8e3a-3404359eec91" alt="image">
+</p>
+
+Figure 7. The estimated rebar location.
+
+### Step 7. Discussion
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We successfully processed the actual concrete bridge GPR data by processing the outliers with IQR, applying gain to amplify the reflection signals, adjusting the A-scan baseline with dewow, leveraging the scan-by-scan time-zero correction, F-K migration, and K-means clustering algorithm to pinpoint the rebar locations. It is noteworthy that GPR data processing requires a deep understanding of each data processing method, and the workers should be able to adjust or apply variables or types of the function with respect to the data characteristics.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The limitation to our work lies in the F-K migration. It assumes the dielectric to be constant for all media, which is hard to assume. Notably, the approximate dielectric value used in F-K migration is from the GPR configuration settings, which are defined by the user. This means if the actual data collector sets the value as default, the migration results can be significantly distorted or underestimated. We currently working on how to automate to set the estimated dielectric based only on the migration results.
 
