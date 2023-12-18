@@ -65,4 +65,23 @@ Figure 3. Comparison of (a) scan-by-scan time-zero correction and (b) without ti
   <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/55aa498f-96ec-4988-9015-60c859061797" alt="image">
 </p>
 
-Figure 4. Plots of multiple A-scans with mean value method. The red vertical line shows the time-zero index based on the mean value. Some of the 1st positive peaks of A-scans align with the time-zero, but some A-scans do not.   
+Figure 4. Plots of multiple A-scans with mean value method. The red vertical line shows the time-zero index based on the mean value. Some of the 1st positive peaks of A-scans align with the time-zero, but some A-scans do not.  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The other method is “scan-by-scan” which is more reasonable and robust than the mean or median strategy. This method detects the 1st positive peaks of A-scans and processes them individually. However, since the location of the 1st peak is different from each other, the data length is also changed. For example, one A-scan has 1st positive peak at the 127th depth index, the other has the 130th index, and if we align the data based on the time-zero index, the starting and ending points of A-scans mismatch each other (See Figure 5). Thus, we cut out the data indices that are not in the common range. For example, if one of the A-scan ranges [-125, 386] and the other ranges [-135, 376], we are taking the data only in common so that the range of data indices becomes [-125, 376]. Figure 6 shows the result of our scan-by-scan time-zero correction after the index cut out.
+
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/4d392493-33e3-4956-8122-d8ee96378281" alt="image">
+</p>
+
+Figure 5. Plots of multiple A-scans with scan-by-scan method. The red vertical line shows the time-zero index, and the 1st positive peak is aligned to the red line. This method results in misalignment at the starting and ending points of the A-scan profiles.
+
+
+<p align="center">
+  <img src="https://github.com/SteveYangFHWA/GPR-test/assets/154262555/dc315665-60d2-4397-8135-9c5b416359dc" alt="image">
+</p>
+Figure 6. Plots of multiple A-scans with scan-by-scan method, but after cutting out the data that is not in the common range. The red vertical line shows the time-zero index, and the 1st positive peak is aligned to the red line. The misalignment at the starting and the ending points of the A-scan profiles is removed.
+
+
+
