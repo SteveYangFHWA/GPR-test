@@ -118,5 +118,21 @@ where $E(k_x, \omega)$ is the Fourier domain for every possible combination of w
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After the Fourier transform, we correlate our actual GPR data into the equation. Note that we receive GPR signal at $z = 0$, where the antenna locations are at the surface. Then the wave function becomes,
 
+$$
+\phi(x, z=0, t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} E(k_x, \omega) e^{-j(k_x x - \omega t)} \ dk_x \ d\omega.
+$$
 
+This equation can transform the GPR signals into the frequency-wavenumber domain. At this point, it is good to mention again why we are doing all these hard things. Our objective is reconstructing the wave function at the specific location of the object in the subsurface, to remove the hyperbola profile of GPR data. To do this, we utilize the Fourier transform to convert our GPR data. This is because the frequency-wavenumber domain is independent of time, which makes it easier to reconstruct our wave function at the object position. Thus, to reconstruct the wave function, we need to know the $E(k_x, \omega)$. $E(k_x, \omega)$ is obtained by inverse Fourier transform and our GPR signal,
+
+$$
+E(k_x, \omega) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \phi(x, z=0, t) e^{-j(k_x x - \omega t)} \ dx \ dt.
+$$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now we have an equation to build up our E, based on our GPR data. To achieve our objective and make our work easier, we need a simple assumption, which is called Exploding Source Modeling (ESM). ESM is nothing more than just assuming that the reflected GPR wave is directly emitted from the object. This enables us to express our reconstructed signal (image after migration) as  $\phi(x, z, t = 0)$ since $t = 0$ means the initial waveform at the object. Note that this assumption cannot be applied if the data is not time-zeroed, because the time frame we consider goes outside of the scope. Specifically, the assumption for time-zero correction is that we only consider the time frame between the object and the surface. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One more important point of ESM is that we are getting rid of the $-\omega t$ term in the equation. This feature allows us to apply the Fast Fourier Transform to reconstruct the wavefunction, since we remove the time-dependent term on the exponential, making it easier to solve the equation numerically. Now you can see the logic behind the F-K migration; first, we express our GPR signal into the frequency-wavenumber domain, and this converted domain is used to reconstruct the waveform at the object locations with a very simple assumption that the wave is coming from the object. Then our final mathematical representation for F-K migration is as follows,
+
+$$
+\phi(x, z, t=0) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} E(k_x, \omega) e^{-j(k_x x + k_z z)} \ dk_x \ d\omega.
+$$
 
